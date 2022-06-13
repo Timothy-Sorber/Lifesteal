@@ -30,8 +30,3 @@ on death:
  
 on load:
  broadcast "<green>Lifesteal by Redstone_pro180 started successfully!"
-
-command /hmm <number>:
- trigger:
-  loop arg:
-   make console execute command "/say hmmmmmm"
