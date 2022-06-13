@@ -3,8 +3,10 @@ command /sethearts <number> [<player>]:
  trigger:
   if arg-2 is set:
    set the maximum health of arg-2 to arg-1
+   set {Health::player} to arg-1
   else:
    set the maximum health of player to arg-1
+   set {Health::player} to arg-1
    
 on first join:
  set {Health::player} to 20
