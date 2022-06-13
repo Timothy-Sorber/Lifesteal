@@ -23,6 +23,8 @@ on death:
  subtract 1 from {Health::victim}
  set maximum health of victim to {Health::victim}
  message "&cYou died to %damager% and lost 1 Heart!"
+ add 1 to {Health::damager}
+ set maximum health of damager to {Health::damager}
  
 on load:
  broadcast "<green>Lifesteal by Redstone_pro180 started successfully!"
