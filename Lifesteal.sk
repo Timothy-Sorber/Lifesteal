@@ -1,0 +1,28 @@
+command /sethearts <number> [<player>]:
+ permission: op
+ trigger:
+  if arg-2 is set:
+   set the maximum health of arg-2 to arg-1
+  else:
+   set the maximum health of player to arg-1
+   
+on first join:
+ set {Health::player} to 20
+ message "Lifesteal by redstone_pro180 Started successfully!"
+ 
+command /reset [<player>]:
+ permission: op
+ trigger:
+  if arg is set:
+   set maximum health of arg to 20
+   set {Health::arg} to 20
+   
+on death:
+ victim is player
+ damager is player
+ subtract 1 from {Health::victim}
+ set maximum health of victim to {Health::victim}
+ message "&cYou died to %damager% and lost 1 Heart!"
+ 
+on load:
+ broadcast "<green>Lifesteal by Redstone_pro180 started successfully!"
